@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
 
-  const handleNumberClick = (number) => {
+  const handleNumberClick = (number: string) => {
     if (phoneNumber.length < 11) {
       setPhoneNumber(phoneNumber + number);
     }
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="container">
       <h1>電話番号を入力してください</h1>
-      <p>please enter your phone number</p>
+      <p>Please enter your phone number</p>
       <div className="o-input-num-display">
         {Array(11).fill(' ').map((_, index) => (
           <React.Fragment key={index}>
@@ -58,4 +58,3 @@ function App() {
 }
 
 export default App;
-
